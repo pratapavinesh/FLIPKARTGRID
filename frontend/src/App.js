@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import "assets/css/nucleo-icons.css";
+import "assets/scss/blk-design-system-react.scss";
+import "assets/demo/demo.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Index from "views/Index.js";
+import LandingPage from "views/examples/LandingPage.js";
+import RegisterPage from "views/examples/RegisterPage.js";
+import ProfilePage from "views/examples/ProfilePage.js";
+
+const App = ()=>{
+    return (
+        <Routes>
+        <Route path="/components" element={<Index />} />
+        <Route path="/landing-page" element={<LandingPage />} />
+        <Route path="/register-page" element={<RegisterPage />} />
+        <Route path="/profile-page" element={<ProfilePage />} />
+        <Route path="*" element={<Navigate to="/components" replace />} />
+      </Routes>
+    )
 }
-
 export default App;
