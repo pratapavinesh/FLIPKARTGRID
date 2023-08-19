@@ -1,18 +1,11 @@
 {
-  "name": "blk-design-system-react",
+  "name": "cosmos",
   "version": "1.2.2",
-  "description": "React version of BLK Design System by Creative Tim",
+  "description": "CMOS : Loyalty Token System ",
   "main": "index.js",
-  "author": "Creative Tim",
+  "author": "Avinesh Avinash Rashi",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/creativetimofficial/blk-design-system-react.git"
-  },
-  "bugs": {
-    "url": "https://github.com/creativetimofficial/blk-design-system-react/issues"
-  },
-  "homepage": "https://demos.creative-tim.com/blk-design-system-react/#/",
+  "homepage": "",
   "keywords": [
     "react",
     "reactjs",
@@ -23,13 +16,7 @@
     "system",
     "system-react",
     "design-system",
-    "design-system-react",
-    "blk-design",
-    "blk-design-react",
-    "blk-system",
-    "blk-system-react",
-    "blk-design-system",
-    "blk-design-system-react"
+    "design-system-react"
   ],
   "dependencies": {
     "@testing-library/jest-dom": "5.16.5",
@@ -90,5 +77,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
