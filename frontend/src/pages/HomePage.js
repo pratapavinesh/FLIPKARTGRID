@@ -17,7 +17,7 @@ import {
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
-import ProfileSection from "components/ProfileSection/ProfileSection";
+import ProfileSection from "components/Profile/Profile";
 import Footer from "components/Footer/Footer.js";
 
 
@@ -36,37 +36,6 @@ export default function HomePage() {
       <PageHeader />
       <div className="main">
         <ProfileSection />
-          <div>
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/blob.png")}
-          />
-          <img
-            alt="..."
-            className="path2"
-            src={require("assets/img/path2.png")}
-          />
-          <img
-            alt="..."
-            className="shapes triangle"
-            src={require("assets/img/triunghiuri.png")}
-          />
-          <img
-            alt="..."
-            className="shapes wave"
-            src={require("assets/img/waves.png")}
-          />
-          <img
-            alt="..."
-            className="shapes squares"
-            src={require("assets/img/patrat.png")}
-          />
-          <img
-            alt="..."
-            className="shapes circle"
-            src={require("assets/img/cercuri.png")}
-          />
           <div className="content-center">
             <Row className="row-grid justify-content-between align-items-center text-left">
               <Col lg="6" md="6">
@@ -134,11 +103,7 @@ export default function HomePage() {
         </div>
         <section className="section section-lg">
           <section className="section">
-            <img
-              alt="..."
-              className="path"
-              src={require("assets/img/path4.png")}
-            />
+    
             <Container>
               <Row className="row-grid justify-content-between">
                 <Col className="mt-lg-5" md="5">
@@ -260,21 +225,6 @@ export default function HomePage() {
           </section>
         </section>
         <section className="section section-lg">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path4.png")}
-          />
-          <img
-            alt="..."
-            className="path2"
-            src={require("assets/img/path5.png")}
-          />
-          <img
-            alt="..."
-            className="path3"
-            src={require("assets/img/path2.png")}
-          />
           <Container>
             <Row className="justify-content-center">
               <Col lg="12">
@@ -328,11 +278,7 @@ export default function HomePage() {
           </Container>
         </section>
         <section className="section section-lg section-safe">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path5.png")}
-          />
+          
           <Container>
             <Row className="row-grid justify-content-between">
               <Col md="5">
@@ -420,148 +366,6 @@ export default function HomePage() {
             </Row>
           </Container>
         </section>
-        <section className="section section-lg">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path4.png")}
-          />
-          <img
-            alt="..."
-            className="path2"
-            src={require("assets/img/path2.png")}
-          />
-          <Col md="12">
-            <Card className="card-chart card-plain">
-              <CardHeader>
-                <Row>
-                  <Col className="text-left" sm="6">
-                    <hr className="line-info" />
-                    <h5 className="card-category">Total Investments</h5>
-                    <CardTitle tag="h2">Performance</CardTitle>
-                  </Col>
-                </Row>
-              </CardHeader>
-            </Card>
-          </Col>
-        </section>
-        <section className="section section-lg section-coins">
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path3.png")}
-          />
-          <Container>
-            <Row>
-              <Col md="4">
-                <hr className="line-info" />
-                <h1>
-                  Choose the coin{" "}
-                  <span className="text-info">that fits your needs</span>
-                </h1>
-              </Col>
-            </Row>
-            <Row>
-              <Col md="4">
-                <Card className="card-coin card-plain">
-                  <CardHeader>
-                    <img
-                      alt="..."
-                      className="img-center img-fluid"
-                      src={require("assets/img/bitcoin.png")}
-                    />
-                  </CardHeader>
-                  <CardBody>
-                    <Row>
-                      <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Light Coin</h4>
-                        <span>Plan</span>
-                        <hr className="line-primary" />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <ListGroup>
-                        <ListGroupItem>50 messages</ListGroupItem>
-                        <ListGroupItem>100 emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
-                      </ListGroup>
-                    </Row>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button className="btn-simple" color="primary">
-                      Get plan
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-coin card-plain">
-                  <CardHeader>
-                    <img
-                      alt="..."
-                      className="img-center img-fluid"
-                      src={require("assets/img/etherum.png")}
-                    />
-                  </CardHeader>
-                  <CardBody>
-                    <Row>
-                      <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Dark Coin</h4>
-                        <span>Plan</span>
-                        <hr className="line-success" />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <ListGroup>
-                        <ListGroupItem>150 messages</ListGroupItem>
-                        <ListGroupItem>1000 emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
-                      </ListGroup>
-                    </Row>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button className="btn-simple" color="success">
-                      Get plan
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="card-coin card-plain">
-                  <CardHeader>
-                    <img
-                      alt="..."
-                      className="img-center img-fluid"
-                      src={require("assets/img/ripp.png")}
-                    />
-                  </CardHeader>
-                  <CardBody>
-                    <Row>
-                      <Col className="text-center" md="12">
-                        <h4 className="text-uppercase">Bright Coin</h4>
-                        <span>Plan</span>
-                        <hr className="line-info" />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <ListGroup>
-                        <ListGroupItem>350 messages</ListGroupItem>
-                        <ListGroupItem>10K emails</ListGroupItem>
-                        <ListGroupItem>24/7 Support</ListGroupItem>
-                      </ListGroup>
-                    </Row>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                    <Button className="btn-simple" color="info">
-                      Get plan
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        </div>
         <Footer />
       </div>
     </>

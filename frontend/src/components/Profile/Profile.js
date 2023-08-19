@@ -32,15 +32,10 @@ export default function ProfileSection() {
             className="dots"
             src={require("assets/img/dots.png")}
           />
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path4.png")}
-          />
           <Container className="align-items-center">
             <Row>
               <Col lg="6" md="6">
-                <h1 className="profile-title text-left">Mike Scheinder</h1>
+                <h1 className="profile-title text-left">Avinesh Pratap Singh</h1>
                 <h5 className="text-on-back">01</h5>
                 <p className="profile-description">
                 I am a creative problem solver and software engineer who
