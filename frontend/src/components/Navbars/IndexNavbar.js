@@ -139,26 +139,6 @@ export default function IndexNavbar() {
             </NavItem>
            
            
-            <NavItem>
-              <Button color="primary" tag={Link} to="/landing-page">
-                  <i className="fa fa-cogs d-lg-none d-xl-none" />
-                   Home
-              </Button>
-            </NavItem>
-
-            <NavItem>
-              <Button color="primary" tag={Link} to="/profile-page">
-                  <i className="fa fa-cogs d-lg-none d-xl-none" />
-                   Profile
-              </Button>
-            </NavItem>
-            <NavItem>
-              <Button color="primary" tag={Link} to="/register-page">
-                  <i className="fa fa-cogs d-lg-none d-xl-none" />
-                   Login/SignUp
-              </Button>
-            </NavItem>
-           
           </Nav>
         </Collapse>
       </Container>

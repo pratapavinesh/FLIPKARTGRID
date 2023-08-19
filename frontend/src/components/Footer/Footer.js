@@ -21,31 +21,16 @@ export default function Footer() {
             <h1 className="title">CMOS•</h1>
           </Col>
           <Col md="3">
-            <Nav>
+          <Nav>
               <NavItem>
-                <NavLink to="/" tag={Link}>
-                  Home
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/profile-page" tag={Link}>
-                  Profile
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/register-page" tag={Link}>
-                  Register
+                <NavLink href="https://www.linkedin.com/in/avinesh-singh-070b58200/">
+                  Contact Us
                 </NavLink>
               </NavItem>
             </Nav>
           </Col>
           <Col md="3">
             <Nav>
-              <NavItem>
-                <NavLink href="https://www.linkedin.com/in/avinesh-singh-070b58200/">
-                  Contact Us
-                </NavLink>
-              </NavItem>
               <NavItem>
                 <NavLink href="https://www.linkedin.com/in/avinesh-singh-070b58200/">
                   About Us
