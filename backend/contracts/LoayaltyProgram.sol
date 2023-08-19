@@ -211,19 +211,20 @@ contract LoayaltyProgram is CosmosForLocal{
 
 
     // This function will redeem the tokens from the sender
-    function redeem(uint256 _value) public virtual returns (bool success) {
+    function redeem(uint256 _value) public virtual override returns (bool success) {
         // Check if the sender has enough tokens
-        require(balanceOf[msg.sender] >= _value);
+        require( addressToUser[msg.sender].wallet.amount >= _value);
 
         // Subtract the tokens from the sender
-        balanceOf[msg.sender] -= _value;
+        addressToUser[msg.sender].wallet.amount -= _value;
 
         // Subtract the tokens from the total supply
         totalSupply -= _value;
 
         // Add the transaction to the transactions mapping
-        transactions[msg.sender].push(
-            Transaction(msg.sender, address(0), _value)
+            
+        addressToUser[msg.sender].trasactionsActivity.push(
+            transactionAlias(msg.sender, address(0), _value)
         );
 
         // Emit the transfer event
