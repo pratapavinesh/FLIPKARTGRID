@@ -7,7 +7,7 @@ import "./Transaction.sol";
 contract User{
     struct user{
         string name;
-        string type;
+        string utype;
         address userAddress;
         string about;
         string twitterHandle;

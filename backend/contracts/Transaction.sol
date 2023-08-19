@@ -7,6 +7,5 @@ contract Transaction{
         address sender;
         address receiver;
         string message;
-        uint256 timeStamp;
      }
 }
