@@ -1,14 +1,9 @@
 import React from "react";
 // reactstrap components
 import {
-  Button,
   Card,
-  CardHeader,
   CardBody,
-  CardFooter,
   CardTitle,
-  ListGroupItem,
-  ListGroup,
   Container,
   Row,
   Col
@@ -19,7 +14,8 @@ import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
 import ProfileSection from "components/Profile/Profile";
 import Footer from "components/Footer/Footer.js";
-
+import ActivitySection from "components/Activity/Activity"
+import RewadsSection from "components/Reward/Reward"
 
 export default function HomePage() {
   React.useEffect(() => {
@@ -36,6 +32,8 @@ export default function HomePage() {
       <PageHeader />
       <div className="main">
         <ProfileSection />
+        <ActivitySection />
+        <RewadsSection />
         </div>
         <section className="section section-lg">
           <section className="section">
