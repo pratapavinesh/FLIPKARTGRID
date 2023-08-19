@@ -81,7 +81,7 @@ export default function ExamplesNavbar() {
             <Row>
               <Col className="collapse-brand" xs="6">
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  BLK•React
+                  COSMOS
                 </a>
               </Col>
               <Col className="collapse-close text-right" xs="6">
@@ -135,7 +135,7 @@ export default function ExamplesNavbar() {
            
             <NavItem>
               <NavLink tag={Link} to="/">
-                Back to Kit
+                Back to Home
               </NavLink>
             </NavItem>
             <NavItem>

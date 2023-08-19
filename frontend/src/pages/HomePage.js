@@ -1,6 +1,4 @@
 import React from "react";
-// react plugin used to create charts
-import { Line } from "react-chartjs-2";
 // reactstrap components
 import {
   Button,
@@ -17,12 +15,12 @@ import {
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import IndexNavbar from "components/Navbars/IndexNavbar.js";
+import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
 
-// import bigChartData from "variables/charts.js";
 
-export default function LandingPage() {
+export default function HomePage() {
   React.useEffect(() => {
     document.body.classList.toggle("landing-page");
     // Specify how to clean up after this effect:
@@ -32,7 +30,8 @@ export default function LandingPage() {
   }, []);
   return (
     <>
-      <ExamplesNavbar />
+      <IndexNavbar />
+      <PageHeader />
       <div className="wrapper">
         <div className="page-header">
           <img
