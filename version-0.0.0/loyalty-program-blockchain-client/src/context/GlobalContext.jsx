@@ -204,7 +204,7 @@ const GlobalProvider = ({ children }) => {
   const updatePartners = async () => {
     getPartners().then((_partners) => {
       setPartners(
-        _partners.map((p) => {
+        _partners?.map((p) => {
           if (p[1].toLowerCase() === account) setIsPartner(true);
           return {
             name: p[0],
