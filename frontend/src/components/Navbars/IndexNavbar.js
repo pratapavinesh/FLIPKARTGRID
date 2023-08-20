@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useMoralis } from "react-moralis";
 
 import {
   Button,
@@ -53,14 +54,51 @@ export default function IndexNavbar() {
       .getElementById("download-section")
       .scrollIntoView({ behavior: "smooth" });
   };
+
+  const { enableWeb3, isWeb3Enabled, Moralis, account } = useMoralis();
+
+  const handleConnectWallet = async () => {
+    try {
+      await enableWeb3();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (isWeb3Enabled) return;
+    const lastState = localStorage.getItem("Moralis::isWeb3Enabled");
+    if (lastState) {
+      handleConnectWallet();
+    } else {
+      localStorage.setItem("Moralis::isWeb3Enabled", false);
+    }
+  }, [isWeb3Enabled]);
+
+  useEffect(() => {
+    Moralis.onAccountChanged((account) => {
+      if (account) {
+        window.localStorage.setItem("Moralis::isWeb3Enabled", true);
+        console.log("Account changed:", account);
+      } else {
+        console.log("No account found");
+      }
+    });
+  }, [Moralis]);
+
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
             <span>CMOS• </span>
-            Loyalty  Token  System
+            Loyalty Token System
           </NavbarBrand>
+          {!account ? (
+            <Button onClick={handleConnectWallet}>Connect Wallet</Button>
+          ) : (
+            "• Connected"
+          )}
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
             Designed and Coded by Avinesh, Avinash, Rashi
           </UncontrolledTooltip>
@@ -105,7 +143,6 @@ export default function IndexNavbar() {
                 data-placement="bottom"
                 href="https://twitter.com/avinesh_2003"
                 rel="noopener noreferrer"
-                
                 target="_blank"
                 title="Follow us on Twitter"
               >
@@ -137,8 +174,6 @@ export default function IndexNavbar() {
                 <p className="d-lg-none d-xl-none">Instagram</p>
               </NavLink>
             </NavItem>
-           
-           
           </Nav>
         </Collapse>
       </Container>

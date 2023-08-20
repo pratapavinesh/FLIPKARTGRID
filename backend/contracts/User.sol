@@ -2,17 +2,14 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.17;
-import "./Wallet.sol";
-import "./Transaction.sol";
-contract User{
-    struct user{
+
+contract User {
+    struct user {
         string name;
-        string utype;
+        uint256 utype;
         address userAddress;
         string about;
         string twitterHandle;
         string facebookHandle;
-        Wallet.wallet walletInformation;
-        Transaction.transaction[] transactionsActivity;
     }
 }

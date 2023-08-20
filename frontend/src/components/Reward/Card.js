@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./Card.module.css";
-import {
-  Button,
-} from "reactstrap";
-const Card = ({ reward }) => {
+import { Button } from "reactstrap";
+
+const Card = ({ reward, onClick, buttonText }) => {
   return (
     <div className={styles.card}>
       <img src={reward.image} alt={reward.name} className={styles.avatar} />
@@ -13,9 +12,7 @@ const Card = ({ reward }) => {
         <p className={styles.about}>{reward.about}</p>
       </div>
       <div className={styles.contact}>
-        <Button>
-          <p>Redeem</p>
-        </Button>
+        <Button onClick={onClick}>{buttonText || "Redeem"}</Button>
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
+import { useGlobal } from "context/GlobalContext";
 import React from "react";
 // reactstrap components
-import { UncontrolledAlert, Container } from "reactstrap";
+import { UncontrolledAlert, Container, Table, TableProps } from "reactstrap";
 
-export default function Notifications() {
+export default function Activity() {
+  const { transactions, account } = useGlobal();
   return (
+
     <div className="section section-notifications" id="notifications">
       <Container>
         <div className="space" />
@@ -45,5 +48,27 @@ export default function Notifications() {
         </UncontrolledAlert>
       </Container>
     </div>
+    // <div className="section section-notifications" id="notifications">
+    //   <Container>
+    //     <div className="space" />
+    //     <h3>Activity</h3>
+    //     <Table borderless>
+    //       <thead>
+    //         <th>From</th>
+    //         <th>To</th>
+    //         <th>Amount</th>
+    //       </thead>
+    //       <tbody>
+    //         {transactions?.map((t, index) => (
+    //           <tr>
+    //             <td>{t.from}</td>
+    //             <td>{t.to}</td>
+    //             <td>{t.amount}</td>
+    //           </tr>
+    //         ))}
+    //       </tbody>
+    //     </Table>
+    //   </Container>
+    // </div>
   );
 }

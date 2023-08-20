@@ -1,14 +1,17 @@
-const hre = require("hardhat");
+const { ethers } = require("hardhat");
+require("dotenv").config();
 
 async function main() {
-  const CosmosToken = await hre.ethers.getContractFactory("CosmosToken");
-  const cosmosToken = await CosmosToken.deploy(100000000, 50);
-
-  await cosmosToken.deployed();
-
-  console.log("Cosmos Token deployed: ", cosmosToken.address);
+  const LoyaltyProgram = await ethers.getContractFactory("LoyaltyProgram");
+  console.log("Deploying Loayalty Program with COSMOS Token...");
+  const loyaltyProgram = await LoyaltyProgram.deploy(100000000,"COSMOS","CMOS");
+  await loyaltyProgram.deployed();
+  console.log(" Loayalty Program with COSMOS Token deployed to:", loyaltyProgram.address);
 }
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });

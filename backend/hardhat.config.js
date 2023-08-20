@@ -1,17 +1,22 @@
+const { task } = require("hardhat/config");
+
 require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
+
+task("accounts", "Prints the list of accounts", async (args, hre) => {
+  const accounts = await hre.ethers.getSigners();
+
+  for (const account of accounts) {
+    console.log(account.address);
+  }
+});
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.17",
-  networks: {
-    mainnet: {
-        url: process.env.PROD_QUICKNODE_KEY,
-        accounts: [process.env.PRIVATE_KEY],
-      },
-    matic: {
-      url: process.env.STAGING_QUICKNODE_ENDPOINT,
-      accounts: [process.env.PRIVATE_KEY]
+  solidity: "0.8.19",
+  defaultNetwork: "hardhat",
+    networks: {
+        hardhat: {
+            blockGasLimit: 1000000000429720 // whatever you want here
+        },
     }
-  }
 };

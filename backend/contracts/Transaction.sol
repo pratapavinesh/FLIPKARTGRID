@@ -2,10 +2,11 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.17;
-contract Transaction{
-     struct transaction{
+
+contract Transaction {
+    struct transaction {
         address sender;
         address receiver;
-        string message;
-     }
+        uint256 value;
+    }
 }
