@@ -65,6 +65,8 @@ contract FlipCoin {
         transactions[msg.sender].push(
             Transaction(address(0), msg.sender, _initialSupply)
         );
+        // adding owner as partner 
+       addPartner("Owner", msg.sender);
     }
 
     // This function will add the partner
