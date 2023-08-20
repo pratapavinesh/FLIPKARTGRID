@@ -209,7 +209,8 @@ const GlobalProvider = ({ children }) => {
     getPartners().then((_partners) => {
       setPartners(
         _partners.map((p) => {
-          if (p[1].toLowerCase() === account) setIsPartner(true);
+          console.log(_partners);
+          if (p[2].toLowerCase() === account) setIsPartner(true);
           return {
             name: p[0],
             address: p[1],

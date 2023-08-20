@@ -46,10 +46,11 @@ contract LoyaltyProgram is CosmosForLocal {
         addressToTransactions[msg.sender].push(
             transaction(address(0), msg.sender, _initialSupply)
         );
+        addPartner(user("owner", 1, msg.sender, "Hi i am Avinesh", "", ""));
     }
 
     // This function will return the partners
-    function getPartners() public view returns (user[] memory) {
+    function getPartners() public view returns (address[] memory) {
         uint numPartners = 0;
         uint ind = 0;
         for (uint256 i = 0; i < keys.length; i++) {
@@ -57,11 +58,11 @@ contract LoyaltyProgram is CosmosForLocal {
                 numPartners++;
             }
         }
-        user[] memory partners = new user[](numPartners);
+        address[] memory partners = new address[](numPartners);
 
         for (uint256 i = 0; i < keys.length; i++) {
             if (addressToUser[keys[i]].utype == 1) {
-                partners[ind] = addressToUser[keys[i]];
+                partners[ind] = addressToUser[keys[i]].userAddress;
                 ind++;
             }
         }
@@ -70,19 +71,19 @@ contract LoyaltyProgram is CosmosForLocal {
     }
 
     // This function will return the partners
-    function getCustomer() public view returns (user[] memory) {
+    function getCustomer() public view returns (address[] memory) {
         uint numPartners = 0;
         uint ind = 0;
         for (uint256 i = 0; i < keys.length; i++) {
-            if (addressToUser[keys[i]].utype == 0) {
+            if (addressToUser[keys[i]].utype == 2) {
                 numPartners++;
             }
         }
-        user[] memory partners = new user[](numPartners);
+        address[] memory partners = new address[](numPartners);
 
         for (uint256 i = 0; i < keys.length; i++) {
-            if (addressToUser[keys[i]].utype == 0) {
-                partners[ind] = addressToUser[keys[i]];
+            if (addressToUser[keys[i]].utype == 2) {
+                partners[ind] = addressToUser[keys[i]].userAddress;
                 ind++;
             }
         }
@@ -91,13 +92,13 @@ contract LoyaltyProgram is CosmosForLocal {
     }
 
     // This function will return the partners
-    function getall() public view returns (user[] memory) {
+    function getall() public view returns (address[] memory) {
         uint numPartners = keys.length;
         uint ind = 0;
-        user[] memory partners = new user[](numPartners);
+        address[] memory partners = new address[](numPartners);
 
         for (uint256 i = 0; i < keys.length; i++) {
-            partners[ind] = addressToUser[keys[i]];
+            partners[ind] = addressToUser[keys[i]].userAddress;
             ind++;
         }
 
