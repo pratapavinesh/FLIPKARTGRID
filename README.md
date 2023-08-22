@@ -16,7 +16,7 @@ Welcome to the Loyalty and Rewards Program project! This project aims to develop
 
 ## Getting Started
 
-Follow these steps to set up and deploy the project:\
+Follow these steps to set up and deploy the project:
 
 For version-0.0.0
 1. Clone the repository: `git clone https://github.com/pratapavinesh/FLIPKARTGRID.git`
